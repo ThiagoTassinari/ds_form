@@ -19,46 +19,52 @@
         </nav>
     </header>
 
-    <section id="" form-section>
-        <div>
-            <form name="newAddress">
-                <div>
-                    <label for="cep">CEP:</label>
-                    <input name="cep" id="cep" type="text" placeholder="CEP">
-                </div>
-                <div>
-                    <label for="street">Logradouro:</label>
-                    <input name="street" id="street" type="text" placeholder="CEP">
-                </div>
-                <div>
-                    <label for="number">Número:</label>
-                    <input name="number" id="number" type="text" placeholder="Número">
-                </div>
-                <div>
-                    <label for="city">Cidade:</label>
-                    <input name="city" id="city" type="text" placeholder="Cidade">
-                </div>
-            </form>
+    <main>
+        <section id="" form-section class="form-container">
+            <div class="card-form">
+                <form name="newAddress">
+                    <div class="form-control">
+                        <label for="cep">CEP:</label>
+                        <input name="cep" id="cep" class="form-input" type="text" placeholder="CEP">
+                        <div class="error-message">Campo requerido</div>
+                    </div>
+                    <div class="form-control">
+                        <label for="street">Logradouro:</label>
+                        <input name="street" id="street" class="form-input" type="text" placeholder="Logradouro" disabled>
+                        <div class="error-message">Campo requerido</div>
+                    </div>
+                    <div class="form-control">
+                        <label for="number">Número:</label>
+                        <input name="number" id="number" class="form-input" type="text" placeholder="Número">
+                        <div class="error-message">Campo requerido</div>
+                    </div>
+                    <div class="form-control">
+                        <label for="city">Cidade:</label>
+                        <input name="city" id="city" class="form-input" type="text" placeholder="Cidade" disabled>
+                        <div class="error-message">Campo requerido</div>
+                    </div>
+                </form>
 
-            <div>
-                <button type="submit">Salvar</button>
-                <button>Limpar</button>
+                <div>
+                    <button type="submit">Salvar</button>
+                    <button>Limpar</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="list-section">
-        <div>
-            <h3>São Luís</h3>
-            <p>Rua Deputado Luís Rocha, 230</p>
-            <p>65070-290</p>
-        </div>
-        <div>
-            <h3>São Luís</h3>
-            <p>Rua Deputado Luís Rocha, 230</p>
-            <p>65070-290</p>
-        </div>
-    </section>
+        <section id="list-section">
+            <div>
+                <h3>São Luís</h3>
+                <p>Rua Deputado Luís Rocha, 230</p>
+                <p>65070-290</p>
+            </div>
+            <div>
+                <h3>São Luís</h3>
+                <p>Rua Deputado Luís Rocha, 230</p>
+                <p>65070-290</p>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
