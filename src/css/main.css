@@ -40,6 +40,7 @@ body {
     cursor: pointer;
 }
 
+/* =========== Form ============== */
 .form-container {
     width: 100%;
     padding: 40px 20px;
@@ -106,4 +107,37 @@ body {
 
 .btn-right {
     margin-left: 10px;
+}
+
+/* =========== Cards =========== */
+.list-container {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-list-item {
+    background-color: #333333;
+    color: #fff;
+    margin-bottom: 20px;
+    width: min(100%, 900px);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card-list-item > h3 {
+    color: #FF8400;
+    font-size: 18px;
+}
+
+.card-list-item .address-street {
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.card-list-item .address-cep {
+    color: #8F8F8F;
+    font-size: 14px;
 }
