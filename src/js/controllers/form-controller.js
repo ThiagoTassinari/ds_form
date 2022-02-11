@@ -33,15 +33,31 @@ export function init() {
     state.errorNumber = document.querySelector('[data-error="number"]');
 
     state.inputNumber.addEventListener('change', handleInputNumberChange);
+    state.btnClear.addEventListener('click', handleBtnClearClick);
 }
 
-handleInputNumberChange((e) => {
+function handleInputNumberChange(e) {
     if (e.target.value == "") {
         setFormError("number", "Campo requerido");
     } else {
         setFormError("number", "");
     }
-})
+}
+
+function handleBtnClearClick(e) {
+    e.preventDefault();
+    clearForm();
+};
+
+function clearForm() {
+    state.inputCep.value = "";
+    state.inputStreet.value = "";
+    state.inputNumber.value = "";
+    state.inputCity = "";
+
+    setFormError("cep", "")
+    setFormError("number", "")
+};
 
 function setFormError(key, value) {
     const element = document.querySelector(`[data-error="${key}"]`);
