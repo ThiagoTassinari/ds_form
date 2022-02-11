@@ -1,6 +1,9 @@
+import Address from '../models/address.js';
 
 //Função construtora para representar qual o tipo do estado do módulo
 function State() {
+    this.address = new Address();
+    
     this.inputCep = null;
     this.inputStreet = null;
     this.inputNumber = null;
