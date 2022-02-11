@@ -25,7 +25,7 @@ function createCard(address) {
     line.innerHTML = `${address.street}, ${address.number}`;
 
     const cep = document.createElement('p');
-    cep.classList.add("address-line");
+    cep.classList.add("address-cep");
     cep.innerHTML = address.cep;
 
     div.appendChild(h3);
