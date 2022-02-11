@@ -62,6 +62,7 @@ async function handleInputCepChange(e) {
     } catch (e) {
         state.inputStreet.value = "";
         state.inputCity.value = "";
+        
         setFormError("cep", "Informe um CEP válido!");
     }
 }
@@ -70,9 +71,28 @@ function handleInputNumberKeyup(e) {
     state.address.number = e.target.value;
 }
 
-async function handleBtnSaveClick(e) {
+function handleBtnSaveClick(e) {
     e.preventDefault();
-    listController.addCard(state.address);
+
+    const errors = addressService.getErrors(state.address);
+
+    const keys = Object.keys(errors);
+
+    if (keys.length > 0) {
+        /* Classic Function
+        for(let i = 0; i < keys.length; i++) {
+            console.log(keys[i], errors[keys[i]])
+            setFormError(keys[i], errors[keys[i]])
+        } */
+
+        // Arrow function
+        keys.forEach(key => {
+            setFormError(key, errors[key]);
+        }); 
+    } else {
+        listController.addCard(state.address);
+        clearForm();
+    }
 }
 
 function handleBtnClearClick(e) {
@@ -87,7 +107,11 @@ function clearForm() {
     state.inputCity = "";
 
     setFormError("cep", "")
-    setFormError("number", "")
+    setFormError("number", "");
+
+    state.address = new Address();
+
+    state.inputCep.focus();
 };
 
 function setFormError(key, value) {
