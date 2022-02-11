@@ -1,6 +1,6 @@
 import Address from '../models/address.js';
 import * as addressService from '../services/address-service.js';
-
+import * as listController from './list-controller.js'
 //Função construtora para representar qual o tipo do estado do módulo
 function State() {
     this.address = new Address();
@@ -69,10 +69,10 @@ async function handleInputCepChange(e) {
 function handleInputNumberKeyup(e) {
     state.address.number = e.target.value;
 }
+
 async function handleBtnSaveClick(e) {
     e.preventDefault();
-    // const result = await requestService.getJson('https://viacep.com.br/ws/01001000/json/');
-    console.log(state.address);
+    listController.addCard(state.address);
 }
 
 function handleBtnClearClick(e) {
